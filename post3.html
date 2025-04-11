@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌟 My Coding Journey | Barbie Dream Blog</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+    const sections = document.querySelectorAll("section, header, main");
+    const navLinks = document.querySelectorAll("nav ul li a");
+  
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+  
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+
+<body>
+    <section class="home-content">
+        <h1>🌟 My Coding Journey</h1>
+        <p>Every line of code taught me something new. Here’s a glimpse into my coding adventures!</p>
+    </section>
+
+    <nav>
+        <ul>
+          <li><a href="#home">🏠 Home</a></li>
+          <li><a href="#blog">📝 Blog</a></li>
+          <li><a href="#contact">💌 Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Barbie Dream Blog</h1>
+            <p class="tagline">Soft, smart & a little bit sparkly ✨</p>
+        </header>
+
+        <main>
+            <article class="card">
+                <h2>🌟 My Coding Journey</h2>
+                <p>Every line of code taught me something new. Here’s a glimpse into my coding adventures!</p>
+                <p>In this post, I talk about how my coding journey began and the challenges I’ve faced so far. It has been a roller coaster, but I’ve learned and grown so much from every experience.</p>
+            </article>
+        </main>
+
+        <footer>
+            <p>© 2025 Barbie Dream Blog | All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>

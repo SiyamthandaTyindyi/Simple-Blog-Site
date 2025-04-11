@@ -3,36 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Simple Blog</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Barbie Dream Blog</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+<script>
+    const sections = document.querySelectorAll("section, header, main");
+    const navLinks = document.querySelectorAll("nav ul li a");
+  
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+  
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+  
 <body>
+    <section class="home-content">
+        <h1>Welcome to My Personal Blog!</h1>
+        <p>This blog is a collection of my thoughts, my journey through coding, and all the projects I’m working on. Here, I’ll share what I’ve learned, challenges I’ve faced, and how I’m growing every day. Stay tuned!</p>
+    </section>
 
-  <header>
-    <h1><DevBy Siya=""></DevBy>SiyamthandaTyindyi's Blog</h1>
-    <p>Sharing my coding journey and lessons along the way.</p>
-  </header>
+    <nav>
+        <ul>
+          <li><a href="#home">🏠 Home</a></li>
+          <li><a href="#blog">📝 Blog</a></li>
+          <li><a href="#contact">💌 Contact</a></li>
+        </ul>
+    </nav>
 
-  <main>
-    <article class="post">
-      <h2>Why I Started Coding</h2>
-      <p class="date">Posted on April 9, 2025</p>
-      <p>I began my coding journey with curiosity and the desire to build things. It wasn’t always easy, but every line of code has taught me something new.</p>
-      <a href="#">Read more</a>
-    </article>
+    <div class="container">
+        <header>
+            <h1>Barbie Dream Blog</h1>
+            <p class="tagline">Soft, smart & a little bit sparkly ✨</p>
+        </header>
 
-    <article class="post">
-      <h2>My First HTML Project</h2>
-      <p class="date">Posted on April 8, 2025</p>
-      <p>This was the first time I turned an idea into a real webpage. I built a portfolio using just HTML and CSS — no frameworks, just raw code.</p>
-      <a href="#">Read more</a>
-    </article>
-  </main>
+        <main>
+            <!-- Blog Section -->
+            <section id="blog">
+                <article class="card">
+                    <h2>💖 Welcome to My World</h2>
+                    <p>Pink skies, soft fonts, and a girl who codes. This is where I share thoughts, passions, and code snippets!</p>
+                    <a href="post1.html" class="btn">Read more</a> <!-- Link to full post -->
+                </article>
 
-  <footer>
-    <p>© 2025 <DevBy Siya=""></DevBy> | <a href="https://github.com/SiyamthandaTyindyi">GitHub</a></p>
-  </footer>
+                <article class="card">
+                    <h2>🌸 Rebuilding Me</h2>
+                    <p>It took hours, frustrations, and a whole lot of glitter. But I didn’t give up — and I’m proud.</p>
+                    <a href="post2.html" class="btn">Read more</a> <!-- Link to full post -->
+                </article>
 
+                <article class="card">
+                    <h2>🌟 Embracing Coding Challenges</h2>
+                    <p>From debugging errors to solving complex problems, coding has been a rewarding journey.</p>
+                    <a href="post3.html" class="btn">Read more</a> <!-- Link to full post -->
+                </article>
+            </section>
+            <section class="contact">
+                <h2>💌 Let's Connect</h2>
+                <section class="contact-form">
+                    <h2>Contact Me</h2>
+                    <form action="https://formspree.io/f/xvgkdlrr" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+            
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+            
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+            
+                        <button type="submit">Send Message</button>
+                    </form>
+                </section>
+            </section>            
+            </section>
+            
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Barbie Dream Blog</p>
+        </footer>
+    </div>
 </body>
 </html>
 
